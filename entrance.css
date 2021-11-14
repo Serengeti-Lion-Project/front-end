@@ -1,0 +1,68 @@
+.body{
+    font-family: Noto Sans KR;
+font-style: normal;
+font-weight: 100;
+font-size: 50px;
+line-height: 72px;
+
+color: #000000;
+
+}
+
+.title{
+        position: absolute;
+    width: 706px;
+    height: 88px;
+    left: 556px;
+    top: 159px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 72px;
+
+    color: #000000;
+
+}
+.form-group{
+
+position: absolute;
+width: 713px;
+height: 336px;
+left: 387px;
+top: 362px;
+
+background: rgba(255, 255, 255, 0.3);
+border: 3px solid #A0CD63;
+box-sizing: border-box;
+border-radius: 60px;
+}
+
+
+.entrance-button{
+
+    position: absolute;
+    width: 713px;
+    height: 89px;
+    left: 387px;
+    top: 722px;
+
+    background: #A0CD63;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 60px;
+
+
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+}
