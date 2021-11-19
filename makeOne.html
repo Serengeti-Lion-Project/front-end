@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,11 +40,17 @@
       } catch( error ) {
         date = null;
       }
- 
+      var ddd;
+      ddd=date.getFullYear().toString();
+      ddd+="/";
+      ddd+=date.getMonth().toString();
+      ddd+="/";
+      ddd+=date.getDate().toString();
       return date;
     }
   } );
   </script>
+
 </head>
 <body>
     <div class="inner">
@@ -103,6 +110,7 @@
                 <p style="margin-top:30px">만날 날짜를 선택하세요</p>
             </div>
 
+            
             <div class="rightBox">
                 <div class="startTime">
                     <img src="img/timeIcon.png" class="selectIcon">
@@ -132,12 +140,7 @@
                         <option value="22">10:00 PM</option>
                         <option value="23">11:00 PM</option>
                     </select>
-                    <p>시</p>
-                    <select id="startminuteSelect">
-                        <option value="0">0</option>
-                        <option value="30">30</option>
-                    </select>
-                    <p>분부터</p>
+                    <p>시까지</p>
                 </div>
                 <div class="endTime">
                     <img src="img/timeIcon.png" class="selectIcon">
@@ -167,12 +170,7 @@
                         <option value="23">11:00 PM</option>
                         <option value="24">12:00 AM</option>
                     </select>
-                    <p>시</p>
-                    <select id="startminuteSelect">
-                        <option value="0">0</option>
-                        <option value="30">30</option>
-                    </select>
-                    <p>분까지</p>
+                    <p>시까지</p>
                 </div>
                 <div class="passwordBox">
                     <img src="img/passwordIcon.png" class="selectIcon">
