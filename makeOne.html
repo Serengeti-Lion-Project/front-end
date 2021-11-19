@@ -59,6 +59,7 @@ xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
             <img src="img/logoImage.png" class="logoImage" >
             <p style="font-size: 40px;">우리 대체 언제 만나 ?</p>
         </div> 
+        <form>
         <input type="text" id="title" placeholder="지금 제목을 입력하세요!">
         <div class="mainContent">
             <div class="leftBox">
@@ -115,7 +116,7 @@ xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
             <div class="rightBox">
                 <div class="startTime">
                     <img src="img/timeIcon.png" class="selectIcon">
-                    <select id="startTimeSelect">
+                    <select id="startTimeSelect" onChange="this.form.submit();">
                         <option value="0" selected>12:00 AM</option>
                         <option value="1">1:00 AM</option>
                         <option value="2">2:00 AM</option>
@@ -145,7 +146,8 @@ xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
                 </div>
                 <div class="endTime">
                     <img src="img/timeIcon.png" class="selectIcon">
-                    <select id="endTimeSelect">
+                    <select id="endTimeSelect" onChange="this.form.submit();">
+
                         <option value="1" selected>1:00 AM</option>
                         <option value="2">2:00 AM</option>
                         <option value="3">3:00 AM</option>
@@ -171,6 +173,8 @@ xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
                         <option value="23">11:00 PM</option>
                         <option value="24">12:00 AM</option>
                     </select>
+
+                    
                     <p>시까지</p>
                 </div>
                 <div class="passwordBox">
@@ -179,8 +183,9 @@ xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
                 </div>
                 
                 <div class="makeButton">
-                    <input type="button" id="makeBtn" value="            시작하기">
+                    <input type="submit" id="makeBtn" value="            시작하기">
                 </div>
+              </form>
             </div>
         </div>
     </div>
