@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: baseline;
+            align-items: center;
+        }
+        .topBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: baseline;
+            align-items: center;
+        }
+    </style>
+
+    <link rel='stylesheet' type='text/css' href='teampage.css'>
+    <link rel='stylesheet' type='text/css' href='calendar.css'>
+
+    <script type = "text/javascript" src='calendar.js'></script>
+
+</head>
+<body>
+    <div class="inner">
+        <div class="topBox"style = "margin-bottom: 100px">
+            <div class="calendarBox" style="margin-left: 100px">
+                    <div class = "right" style = "width : 497px;">
+
+                            <h2>팀 목록</h2>
+                    
+                            <div class = "detailSchedule" style="flex-direction: row">
+                                    <div class="detail1" style="
+                                    height: 68px;background-image: url(img/detailSchedule.png);margin-bottom: 30px">
+                                        <p style="font-size: 30px;text-align: center">아빠 사자</p>
+                                    </div>              
+                                    <div class="detail2" style="
+                                    height: 68px;background-image: url(img/detailSchedule2.png);margin-bottom: 30px">
+                                        <p style="font-size: 30px;  text-align: center">엄마 사자</p>
+                                    </div>
+                                    <div class="detail3" style="
+                                    height: 68px;background-image: url(img/detailSchedule.png);margin-bottom: 30px">
+                                        <p style="font-size: 30px;text-align: center">애기 사자</p>
+                                    </div>
+                                    <div class="detail4" style="
+                                    height: 68px;background-image: url(img/detailSchedule2.png);margin-bottom: 30px">
+                                        <p style="font-size: 30px;text-align: center">우리 대체 언제 만나 ?</p>
+                                    </div>
+                                    <div class="detail5" style="
+                                    height: 68px;background-image: url(img/detailSchedule.png);margin-bottom: 30px">
+                                        <p style="font-size: 30px;text-align: center">우리 대체 언제 만나 ?</p>
+                                    </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                    
+            </div>
+            <div class style="width: 150px;"></div>
+            <div class="detailSchedule">
+
+                    <div class = "left" style = "width : 600px;">
+                            <h2>내 일정</h2>
+
+                            <div class="calendar" style = "margin : 0 ;text-align: center; justify-content: center">
+                                    <div class="header">
+                                        <div class="year-month" id = "year-month"></div>
+                                        <div class="nav">
+                                                <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+                                                <button class="nav-btn go-today" onclick="goToday()">Today</button>
+                                                <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+                                              </div>
+                                    </div>
+                                    <div class="main">
+                                        <div class="days">
+                                            <div class="day">일</div>
+                                            <div class="day">월</div>
+                                            <div class="day">화</div>
+                                            <div class="day">수</div>
+                                            <div class="day">목</div>
+                                            <div class="day">금</div>
+                                            <div class="day">토</div>
+                                        </div>
+                                        <div class="dates" id = "dates"></div>
+                                    </div>
+                                </div>
+                
+                    <script type = "text/javascript" src='calendar.js'></script>
+                    </div>
+
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
