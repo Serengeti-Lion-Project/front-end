@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>일회성 만드는 페이지</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='start.css'>
+    <!-- <script src='entrance.js'></script> -->
+</head>
+<body>
+
+<div class="title">
+        <h1>🗣 우리 대체 언제 만나 ? </h1>
+        <input type="roomtitle" id="roomtitle" roomtitle="roomtitle" placeholder="지금 제목을 입력하세요."></p>
+</div>
+
+<div class="start-calendar">
+    <input type="date" min="{{event.dateStart.date()}}" max="{{event.dateEnd.date()}}" value="{{event.dateStart.date()}}" name="start_time" id="start_time">부터<br>
+</div>
+<div class="end-calendar">
+        <input type="date" min="{{event.dateStart.date()}}" max="{{event.dateEnd.date()}}" value="{{event.dateStart.date()}}" name="start_time" id="start_time">까지<br>
+</div>
+
+<div class="start-time">
+        <!-- <input type="datetime-local" min="{{event.dateStart.date()}}T00:00" max="{{event.dateEnd.date()}}T23:59" value="{{event.dateStart.date()}}T00:00" name="end_time" id="end_time"><br> -->
+        <p><img src = "img/timeicon.png"> <input type="text" id="roompassword" roompassword="roompassword" placeholder="시 부터"></p>
+
+    </div>
+    <div class = "end-time">
+            <p><img src = "img/timeicon.png"> <input type="text" id="roompassword" roompassword="roompassword" placeholder="시 까지"></p>
+    </div>
+    <div class="input-password">
+            <p><img src = "img/key.png"> <input type="text" id="roompassword" roompassword="roompassword" placeholder="비밀번호 입력"></p>
+
+    </div>
+
+<div class = "start-button">
+      <p>시작하기</p>
+</div>
+    
+    
+</body>
+</html>

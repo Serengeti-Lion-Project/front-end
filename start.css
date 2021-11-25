@@ -1,0 +1,82 @@
+.title{
+    position: absolute;
+   
+    left: 400px;
+    top: 100px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 72px;
+
+    color: #000000;
+
+}
+
+.start-calendar{
+    position: absolute;
+
+    left: 200px;
+    top: 300px;
+
+}
+.end-calendar{
+    position: absolute;
+
+    left: 200px;
+    top: 500px;
+}
+.start-time{
+
+    position: absolute;
+    width: 480px;
+    height: 80px;
+    left: 803px;
+    top: 367px;
+    
+    background: rgba(255, 255, 255, 0.3);
+    border: 3px solid #A0CD63;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.end-time{
+        position: absolute;
+    width: 480px;
+    height: 80px;
+    left: 803px;
+    top: 468px;
+
+    background: rgba(255, 255, 255, 0.3);
+    border: 3px solid #A0CD63;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.input-password{
+    position: absolute;
+    width: 480px;
+    height: 80px;
+    left: 803px;
+    top: 571px;
+
+    background: rgba(255, 255, 255, 0.3);
+    border: 3px solid #A0CD63;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.start-button{
+    position: absolute;
+width: 480px;
+height: 80px;
+left: 803px;
+top: 674px;
+
+background: #A0CD63;
+border: 3px solid #A0CD63;
+box-sizing: border-box;
+border-radius: 40px;
+
+}
