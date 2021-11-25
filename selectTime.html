@@ -110,10 +110,6 @@
 
 
                 //클릭, 드래그로 선택 시작
-                    var rect=table.getBoundingClientRect();
-                    intLeft=rect.left+40;
-                    intTop=rect.top+30;
-
                     $(function () {
                         var isMouseDown = false;
                         $("td").mousedown(function () {
@@ -153,6 +149,7 @@
 
             <div class="rightTimeBox">
                 <div class="rightTimeHeader">
+                    <p>Group's Availability</p>
                     
                     <div class="colorInfoBox">
                         <p style="margin-right:10px;">불가능</p>
@@ -222,9 +219,7 @@
             </div>
 
         </div>
-        <div class="commentBox">
-
-        </div>
+       
     </div>
     
 </body>
