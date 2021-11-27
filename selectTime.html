@@ -88,12 +88,27 @@
         for(var i=startTime;i<startTime+timeNum;i++) {
             times.push(i);
         }
-    </script>
+
+
+    function clip() {
+
+        var url = '';
+        var textarea = document.createElement("textarea");
+        document.body.appendChild(textarea);
+        url = window.document.location.href;
+        textarea.value = url;
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert("URL이 복사되었습니다.")
+    }
+</script>
 </head>
 <body>
     <div class="inner">
-        <div class="titleBox">
+        <div class="titleBox" style="display: flex; flex-direction: column;text-align: center;">
             <h1>이게 제목입니다</h1>
+            <span class="button gray medium" style="margin-left:700px"><a href="#" onclick="clip(); return false;" style="text-decoration: none; color:inherit; border:solid 2px #c4c4c4; border-radius: 20px; padding:5px;">URL주소복사</a></span>
         </div>
         <div class="timeBox">
             <div class="leftTimeBox">
