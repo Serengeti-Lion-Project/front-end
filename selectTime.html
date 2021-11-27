@@ -25,9 +25,9 @@
 
         headcount는 총 인원수이다
     */
-        var teamLeader=0; //0이면 리더 아님, 1이면 리더
+        var teamLeader=1; //0이면 리더 아님, 아니면 리더
 
-        var timeNum=10; //시간 개수 백에서 받아와야함.....
+        var timeNum=7; //시간 개수 백에서 받아와야함.....
         var dayNum=6; //날짜 개수
         var selectedArray=new Array(timeNum);
         for(var i=0;i<timeNum;i++) {
@@ -59,6 +59,7 @@
         var eDate=new Date(tempDate.setDate(tempDate.getDate()+dayNum)); //프론트에서 만든 끝나는날
 
         var dates = []; //날짜들 쭉 들어가는 배열
+        var confirmDates=[];
         var days=[];
         var ss_day = new Date(sDate);
         var ee_day = new Date(eDate);
@@ -68,6 +69,7 @@
             var _day_ = ss_day.getDate();
             _day_ = _day_ < 10 ? '0' + _day_ : _day_;
             dates.push( _mon_ + '-' + _day_);
+            confirmDates.push(ss_day.getFullYear()+'-'+_mon_ + '-' + _day_);
             var dayday; //요일
             switch(ss_day.getDay()) {
                 case 0:dayday="일";break;
@@ -308,16 +310,51 @@
             </div>
         </div>
 
-        <div class="onlyLeader"></div>
+        <div id="onlyLeader" style="display:flex; flex-direction: row; margin-top:20px">
+            
+            
+        </div>
         <script>
             if(teamLeader!=0) {
-
+                var teamLeaderHTML="<form action='' style='display:flex; flex-direction: row;'><div><label for='dateConfirm'>날짜</label><select id='dateConfirm' style='margin-right:10px;'></select><label for='timeStartConfirm'>시작시간</label><select id='timeStartConfirm'></select><label for='timeStartConfirmMinute'>:</label><select id='timeStartConfirmMinute' style='margin-right:10px;'></select><label for='timeEndConfirm'>끝나는시간</label><select id='timeEndConfirm'></select><label for='timeEndConfirmMinute'>:</label><select id='timeEndConfirmMinute' style='margin-right:10px;'></select></div><div><input type='submit' value='확정하기' id='confirmButton'></div></form>";
+                document.getElementById("onlyLeader").innerHTML=teamLeaderHTML;
             }
 
         </script>
         
 
     </div>
-    
+    <script type="text/javascript">
+        for (var i = 0; i < confirmDates.length - 1; i++) {
+            var dateConfirmOps = document.createElement('option');
+            dateConfirmOps.innerHTML = confirmDates[i];
+            dateConfirmOps.value = confirmDates[i];
+            document.getElementById('dateConfirm').appendChild(dateConfirmOps);
+        }
+        for (var i = 0; i < times.length; i++) {
+            var dateConfirmOps = document.createElement('option');
+            dateConfirmOps.innerHTML = times[i];
+            dateConfirmOps.value = times[i];
+            document.getElementById('timeStartConfirm').appendChild(dateConfirmOps);
+        }
+        for (var i = 0; i < 61; i++) {
+            var dateConfirmOps = document.createElement('option');
+            dateConfirmOps.innerHTML = i;;
+            dateConfirmOps.value = i;
+            document.getElementById('timeStartConfirmMinute').appendChild(dateConfirmOps);
+        }
+        for (var i = 0; i < times.length; i++) {
+            var dateConfirmOps = document.createElement('option');
+            dateConfirmOps.innerHTML = times[i];
+            dateConfirmOps.value = times[i];
+            document.getElementById('timeEndConfirm').appendChild(dateConfirmOps);
+        }
+        for (var i = 0; i < 61; i++) {
+            var dateConfirmOps = document.createElement('option');
+            dateConfirmOps.innerHTML = i;
+            dateConfirmOps.value = i;
+            document.getElementById('timeEndConfirmMinute').appendChild(dateConfirmOps);
+        }
+    </script>
 </body>
 </html>
