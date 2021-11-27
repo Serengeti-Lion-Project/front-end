@@ -67,6 +67,7 @@ table {
     border:none;
     font-size: 20px;
     margin-top:-10px;
+    cursor:pointer;
 }
 
 #submit-test {
@@ -78,5 +79,5 @@ table {
     outline:none;
     border:none;
     font-size: 15px;
-   
+    cursor:pointer;
 }
