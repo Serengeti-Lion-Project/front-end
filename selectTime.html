@@ -50,8 +50,8 @@
         resultArray[3][3]=3; //테스트용으로 넣어둔거
     
         ///////////날짜 받아오기
-        var startDate="11/22/2021"; //시작하는 날짜 월/일/년도
-        var startTime=7;
+        var startDate="11/22/2021"; //시작하는 날짜 월/일/년도************이거만넣어주시면 감사할것같습니다
+        var startTime=7; //***********************시작시간! 이거만 넣어주시면 감사할것같습니당
         var endTime=startTime+timeNum;
         var arr=startDate.split("/");
         var sDate=new Date(arr[2]+"-"+arr[0]+"-"+arr[1]); //프론트에서 처리한 시작하는날
@@ -310,18 +310,11 @@
 
         <div class="onlyLeader"></div>
         <script>
+            if(teamLeader!=0) {
+
+            }
 
         </script>
-       
-        <!--백엔드에서 가져온거-->
-        <form id="testForm">
-            <input type="hidden" name="total_date" th:value="${total_date}">
-            <input type="hidden" name="total_time" th:value="${total_time}">
-            <input type="hidden" name="urlid" th:value="${urlid}">
-            <input type="hidden" name="name" th:value="${name}">
-            <input type="hidden" name="title" th:value="${title}">
-        
-        </form>
         
 
     </div>
