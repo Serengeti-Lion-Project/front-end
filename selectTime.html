@@ -25,6 +25,8 @@
 
         headcount는 총 인원수이다
     */
+        var teamLeader=0; //0이면 리더 아님, 1이면 리더
+
         var timeNum=10; //시간 개수 백에서 받아와야함.....
         var dayNum=6; //날짜 개수
         var selectedArray=new Array(timeNum);
@@ -47,7 +49,43 @@
         resultArray[3][2]=1; //테스트용으로 넣어둔거
         resultArray[3][3]=3; //테스트용으로 넣어둔거
     
+        ///////////날짜 받아오기
+        var startDate="11/22/2021"; //시작하는 날짜 월/일/년도
+        var startTime=7;
+        var endTime=startTime+timeNum;
+        var arr=startDate.split("/");
+        var sDate=new Date(arr[2]+"-"+arr[0]+"-"+arr[1]); //프론트에서 처리한 시작하는날
+        var tempDate=new Date(arr[2]+"-"+arr[0]+"-"+arr[1]);
+        var eDate=new Date(tempDate.setDate(tempDate.getDate()+dayNum)); //프론트에서 만든 끝나는날
 
+        var dates = []; //날짜들 쭉 들어가는 배열
+        var days=[];
+        var ss_day = new Date(sDate);
+        var ee_day = new Date(eDate);
+        while (ss_day.getTime() <= ee_day.getTime()) {
+            var _mon_ = (ss_day.getMonth() + 1);
+            _mon_ = _mon_ < 10 ? '0' + _mon_ : _mon_;
+            var _day_ = ss_day.getDate();
+            _day_ = _day_ < 10 ? '0' + _day_ : _day_;
+            dates.push( _mon_ + '-' + _day_);
+            var dayday; //요일
+            switch(ss_day.getDay()) {
+                case 0:dayday="일";break;
+                case 1:dayday="월";break;
+                case 2:dayday="화";break;
+                case 3:dayday="수";break;
+                case 4:dayday="목";break;
+                case 5:dayday="금";break;
+                case 6:dayday="토";break;
+            } 
+            days.push(dayday);
+            ss_day.setDate(ss_day.getDate() + 1);
+        }
+
+        var times=[];
+        for(var i=startTime;i<startTime+timeNum;i++) {
+            times.push(i);
+        }
     </script>
 </head>
 <body>
@@ -83,11 +121,30 @@
                         for(var j=0;j<dayNum+1;j++) {
                             if(i==0) { //날짜넣는 맨위파트
                                 tableAddr[0][j]=document.createElement("th");
-                                tableAddr[0][j].style.backgroundColor="red"; //날짜넣을거임
+                                if(j!=0) { //제일 윗줄에 날짜넣음
+                                    var tempDateText=document.createTextNode(dates[j-1]);
+                                    var tempDateText2=document.createTextNode(days[j-1]);
+                                    var dateBox=document.createElement("p");
+                                    var dateBox2=document.createElement("p");
+                                    dateBox.style.fontSize="10px";
+                                    dateBox2.style.fontSize="14px";
+                                    dateBox.appendChild(tempDateText);
+                                    dateBox2.appendChild(tempDateText2);
+                                    tableAddr[0][j].appendChild(dateBox);
+                                    tableAddr[0][j].appendChild(dateBox2);
+                                    
+                                }
                             } else {
                                 if(j==0) { //시간넣는 맨왼쪽파트
                                     tableAddr[i][0]=document.createElement("th");
-                                    tableAddr[i][0].style.backgroundColor="green"; //시간넣어야되나싶고그래...
+                                    if(i!=0) { //제일 왼쪽줄에 시간넣음
+                                        var tempTimeText=document.createTextNode(times[i-1]);
+                                        var timeBox=document.createElement("p");
+                                        timeBox.style.fontSize="15px";
+                                        timeBox.appendChild(tempTimeText);
+                                        tableAddr[i][0].appendChild(timeBox);
+                                    }
+                                    
                                 } else {
                                     tableAddr[i][j]=document.createElement("td");
                                     if(i!=0 && selectedArray[i-1][j-1]==0) { //선택안된거
@@ -128,7 +185,7 @@
                             
                             if(selectedArray[tempID[0]][tempID[1]]==1) {
                                 selectedArray[tempID[0]][tempID[1]]=0;
-                                document.getElementById($(this).attr("id")).style.backgroundColor="pink";
+                                document.getElementById($(this).attr("id")).style.backgroundColor="#FFF7BA";
                             } else {
                                 selectedArray[tempID[0]][tempID[1]]=1;
                                 document.getElementById($(this).attr("id")).style.backgroundColor="#A0CD63";
@@ -190,11 +247,29 @@
                         for(var j=0;j<dayNum+1;j++) {
                             if(i==0) { //날짜넣는 맨위파트
                                 RtableAddr[0][j]=document.createElement("th");
-                                RtableAddr[0][j].style.backgroundColor="red"; //날짜넣을거임
+                                if(j!=0) { //제일 윗줄에 날짜넣음
+                                    var tempDateText=document.createTextNode(dates[j-1]);
+                                    var tempDateText2=document.createTextNode(days[j-1]);
+                                    var dateBox=document.createElement("p");
+                                    var dateBox2=document.createElement("p");
+                                    dateBox.style.fontSize="10px";
+                                    dateBox2.style.fontSize="14px";
+                                    dateBox.appendChild(tempDateText);
+                                    dateBox2.appendChild(tempDateText2);
+                                    RtableAddr[0][j].appendChild(dateBox);
+                                    RtableAddr[0][j].appendChild(dateBox2);
+                                    
+                                }
                             } else {
                                 if(j==0) { //시간넣는 맨왼쪽파트
                                     RtableAddr[i][0]=document.createElement("th");
-                                    RtableAddr[i][0].style.backgroundColor="green"; //시간넣어야되나싶고그래...
+                                    if(i!=0) { //제일 왼쪽줄에 시간넣음
+                                        var tempTimeText=document.createTextNode(times[i-1]);
+                                        var timeBox=document.createElement("p");
+                                        timeBox.style.fontSize="15px";
+                                        timeBox.appendChild(tempTimeText);
+                                        RtableAddr[i][0].appendChild(timeBox);
+                                    }
                                 } else {
                                     RtableAddr[i][j]=document.createElement("td");
                                     if(resultArray[i-1][j-1]==0) {
@@ -215,11 +290,40 @@
                     }
                     document.getElementById("setRightTable").appendChild(Rtable);
                 //테이블 생성 완료
+
+
+                $(function () {
+                        $("td").mouseover(function () {
+                            var howmanyOK=$(this).attr("id").toString();
+                            var howmany=howmanyOK.substring(1,howmanyOK.length);
+                            var idnums=howmany.split(" ");
+                            
+                            $(this).text(resultArray[idnums[0]][idnums[1]]).css('textAlign','center');
+                        })
+                        $("td").mouseout(function() {
+                            $(this).text("");
+                        })
+                    });
                 </script>
             </div>
-
         </div>
+
+        <div class="onlyLeader"></div>
+        <script>
+
+        </script>
        
+        <!--백엔드에서 가져온거-->
+        <form id="testForm">
+            <input type="hidden" name="total_date" th:value="${total_date}">
+            <input type="hidden" name="total_time" th:value="${total_time}">
+            <input type="hidden" name="urlid" th:value="${urlid}">
+            <input type="hidden" name="name" th:value="${name}">
+            <input type="hidden" name="title" th:value="${title}">
+        
+        </form>
+        
+
     </div>
     
 </body>
