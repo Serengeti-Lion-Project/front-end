@@ -51,7 +51,7 @@ console.log(viewYear);
 
   // Dates 합치기
   var dates = prevDates.concat(thisDates, nextDates);
-
+  console.log(dates);
   // Dates 정리
   var firstDateIndex = dates.indexOf(1);
   var lastDateIndex = dates.lastIndexOf(TLDate);
@@ -73,9 +73,10 @@ console.log(viewYear);
     // document.querySelector('.dates').innerHTML = dates.join('');
 
     var d = document.getElementById("dates");
+    console.log(d);
     // var year_month = document.getElementById("year-month");
 
-    console.log(dates.join)
+    console.log(dates.join(""));
     window.addEventListener('load' ,function(){
 
 
@@ -83,9 +84,9 @@ console.log(viewYear);
             d.innerText = "new";
         }else{
             // dates.innerText = dates.prototype.join.call(arguments);
-            console.log(dates.join())
 
-            d.innerHTML = dates.join();
+            d.innerHTML = dates.join("");
+            console.log(d);
 
         }
     });
