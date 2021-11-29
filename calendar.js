@@ -60,7 +60,7 @@ console.log(viewYear);
                       ? 'this'
                       : 'other';
 
-                      let str = "<div class = \"date\"><span class = \"" + condition + "\">" + date + "</span></div>";
+                      let str = "<div class = \"date\" id = " + date + "><span class = \"" + condition + "\">" + date + "</span></div>";
                       dates[i] = str;
                     })
 
@@ -73,29 +73,29 @@ console.log(viewYear);
     // document.querySelector('.dates').innerHTML = dates.join('');
 
     var d = document.getElementById("dates");
-    console.log(d);
     // var year_month = document.getElementById("year-month");
 
-    console.log(dates.join(""));
     window.addEventListener('load' ,function(){
 
-
-        if(d.innerText){
-            d.innerText = "new";
-        }else{
-            // dates.innerText = dates.prototype.join.call(arguments);
-
+      // window.onload = function(){
+        if(!d.innerText){
             d.innerHTML = dates.join("");
-            console.log(d);
-
+        }else{
+          console.log("wait");
         }
+      // }
     });
+
 
 
   var today = new Date();
   if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
     for (let date of document.querySelectorAll('.this')) {
-      if (+date.innerText === today.getDate()) {
+      if (+date.innerText === 3) {
+        date.classList.add('today');
+        
+      }
+      if (+date.innerText === 5) {
         date.classList.add('today');
         break;
       }
